@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Amazing Color Guessing Game!</title>
+<script>
+
+
+var colors = ["black","green", "yellow", "red", "purple"];
+var alpha_colors = colors.sort();
+var finished = false;
+var target;
+        var guess_input;
+        function do_game() {
+            colors.sort();
+            target = Math.floor(Math.random() * colors.length);
+            alert(colors[target]);
+            do {
+                guess_input = prompt(
+                    "I am thinking of one of these colors\n\n" + colors +
+                    "\n\nWhat color am I thinking of?"
+                )
+            } while (guess_input.toLowerCase() != colors[target]);
+        }
+</script>
+</head>
+
+<body onload="do_game()">
+
+</body>
+</html>
